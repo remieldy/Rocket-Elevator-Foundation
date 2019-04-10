@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :interventions
   resources :stats
   devise_for :users
   mount RailsAdmin::Engine => '/emp-dashboard', as: 'rails_admin'
@@ -14,6 +13,14 @@ Rails.application.routes.draw do
   resources :quotes
   resources :geolocations
   resources :restapis
+  resources :interventions do
+  get :get_buildings_from_customer, on: :collection
+  get :get_battery_from_building, on: :collection
+  get :get_column_from_battery, on: :collection
+  get :get_elevator_from_column, on: :collection
+
+
+  end
   
   get '/gform', to: 'pages#gform'
   get '/residential', to: 'pages#residential'
@@ -43,7 +50,10 @@ Rails.application.routes.draw do
   get '/watson', to: 'watson#watson'
   get 'intervention', to: 'pages#intervention'
   post 'intervention' => 'pages#intervention'
-  get  'pages/contact' => 'pages#/contact us'
+
+
+
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#index'
 

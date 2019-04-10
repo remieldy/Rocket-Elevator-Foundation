@@ -1,6 +1,26 @@
 class InterventionsController < ApplicationController
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
 
+
+      #  -------  me sort tout les buildings  --------
+def get_buildings_from_customer
+  render json: Building.where("customer_id = ?", params[:customer_id])
+  end
+
+def get_battery_from_building
+    render json: Battery.where("building_id = ?", params[:building_id])
+    end
+
+  def get_column_from_battery
+      render json: Column.where("battery_id = ?", params[:battery_id])
+      end
+
+ def get_elevator_from_column
+        render json: Elevator.where("column_id = ?", params[:column_id])
+        end
+
+
+  
   # GET /interventions
   # GET /interventions.json
   def index
@@ -73,3 +93,5 @@ class InterventionsController < ApplicationController
       params.fetch(:intervention, {})
     end
 end
+  
+

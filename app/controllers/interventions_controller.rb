@@ -63,7 +63,7 @@ class InterventionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # cest ici pour que ca ce change automatiquement quand ont migrate le id ce mets auto
+
     def set_intervention
       @intervention = Intervention.find(params[:id])
     end

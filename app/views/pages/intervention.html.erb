@@ -74,13 +74,7 @@
 									</a>
 
 								</li>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
-						<%# --------------		aller dans app/views/pages/work3 ----------- %>
+
 								<li>
 										<!-- Portfolio -->
 										<a target="new" href="/portfolio_to">
@@ -182,27 +176,35 @@
 						<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
 					</div><!-- /Alert Mandatory -->
 
-				 <!-- label where you enter your information -->
 					&nbsp;
 					&nbsp;
 					&nbsp;
-							
-							<%# prendre  les informations dans le schema?????????????????????? %>   
+							<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
+							<%# 1- faire un form_for
+							2- <%= f.select(:customer_id, == customer_id pour les customers,
+							3- Customer.all.collect == il collect tout les customer, 
+							4- ensuite dans la classe dans mysql company_name pour avoir le nom des compagny == [p.company_name,
+							5-  le second  p.id indique sa valeur pour aller le chercher avec buildings == p.id]} %>
+							   
 					<%= form_for :intervention, url: {},html: {method: "post"} do |f| %>
-					<%= f.select(:customer_id, Customer.all.collect {|p| [p.company_name]},  {prompt: "Select a Client"}, {class: 'form-control'}) %>
-					<%# <%= f.select(:building, building.all.collect {|p| [p.index_intervention_on_battery_id"]},  {prompt: "Select a Building"}, {class: 'form-control'}) %> 
-					<%# <%= f.select(:elevator, elevator.all.collect {|p| [p.company_name]},  {prompt: "Select a Elevator"}, {class: 'form-control'}) %>
-					<%# <%= f.select(:battery, battery.all.collect {|p| [p.company_name]},  {prompt: "Select a battery"}, {class: 'form-control'}) %>  
-					<%# <%= f.select(:column, column.all.collect {|p| [p.company_name]},  {prompt: "Select a Column"}, {class: 'form-control'}) %> 
+					<%= f.select(:customer_id, Customer.all.collect {|p| [p.company_name, p.id]},  {prompt: "Select a Client"}, {class: 'form-control'}) %>
+					<%= f.select(:id, Building.all.collect {|p| [p.id, p.id]},  {prompt: "Select a Building Number"}, {class: 'form-control'}) %>
+					<%= f.select(:battery_id, Battery.all.collect {|p| [p.building_id, p.id]},  {prompt: "Select a Battery Number"}, {class: 'form-control'}) %>
+					<%= f.select(:column, Column.all.collect {|p| [p.battery_id, p.id]},  {prompt: "Select a Column Number"}, {class: 'form-control'}) %>
+					<%= f.select(:elevator, Elevator.all.collect {|p| [p.column_id, p.id]},  {prompt: "Select a Elevator Number"}, {class: 'form-control'}) %>
+					<%= f.select(:user, User.all.collect {|p| [p.first_name, p.id]},  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
+							<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
+
 						
 
-							<%# ---------- submit button ----------- %>
+					<%# ---------- submit button ----------- %>
 					<%= f.submit "Send" %>				
-						<%# ---------- submit button ----------- %>
+					<%# ---------- submit button ----------- %>
+
 
 
 					<% end %>
-						<%# comment leargir ma case input %>
+						<%# comment eleargir ma case input %>
 					<form id="frm1" action="/action_page.php">
  					<strong> <em>Describe the nature of the Intervention :</em></strong> <input type="text" name="fname"><br>
 					  <%# comment leargir ma case input %>

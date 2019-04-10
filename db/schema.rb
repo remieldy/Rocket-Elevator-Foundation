@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_140420) do
     t.bigint "battery_id"
     t.bigint "column_id"
     t.bigint "elevator_id"
+    t.bigint "user_id"
     t.date "interventionStart"
     t.date "intervention_finish"
     t.string "results", null: false
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_140420) do
     t.index ["column_id"], name: "index_intervention_on_column_id"
     t.index ["customer_id"], name: "index_intervention_on_customer_id"
     t.index ["elevator_id"], name: "index_intervention_on_elevator_id"
+    t.index ["user_id"], name: "index_intervention_on_user_id"
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

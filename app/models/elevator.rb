@@ -1,6 +1,7 @@
 class Elevator < ApplicationRecord
     
     belongs_to :column
+    has_many :intervention
 
 #     after_commit do 
 #         if status == 'intervention'

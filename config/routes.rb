@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get :get_column_from_battery, on: :collection
   get :get_elevator_from_column, on: :collection
 
-
   end
   
   get '/gform', to: 'pages#gform'

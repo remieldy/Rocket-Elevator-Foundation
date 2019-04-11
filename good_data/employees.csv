@@ -1,9 +1,9 @@
 id,user_id,first_name,last_name,title,email,phone,password,reset_password_token,reset_password_sent_at,remember_created_at,created_at,updated_at
-1,1,Philippe,Bouillon,Comm Rep,philippe.bouillon@codeboxx.biz,261-811-7248,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2018-08-02,2018-06-03
-2,2,Serge,Savoie,Engineer,serge.savoie@codeboxx.biz,782-252-0031,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2018-06-27,2018-10-24
-3,3,Felix-Antoine,Paradis,Engineer,felix-antoine.paradis@codeboxx.biz,590-425-5182,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2019-01-30,2018-07-14
-4,4,Mathieu,Houde,Engineer,mathieu.houde@codeboxx.biz,272-643-6982,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2019-01-19,2018-05-20
-5,5,Mathieu,Lefrancois,Engineer,mathieu.lefrancois@codeboxx.biz,273-965-9834,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2018-06-14,2018-12-02
-6,6,Remi,Gagnon,Engineer,remi.gagnon@codeboxx.biz,977-503-9474,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2018-05-27,2019-03-12
-7,7,Nadya,Fortier,Director,nadya.fortier@codeboxx.biz,168-641-9076,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2018-08-31,2018-12-20
-8,8,Pablo,Dobby,Student,Dobby.truuu@gmail.com,517-902-9314,$2a$11$.R0BOxzw9CyMeZH/kQbkUeo6Mp9OuVQBsrdWVbnNMEdjyweWyGCLm,,,,2018-08-28,2019-03-28
+1,1,Philippe,Bouillon,Comm Rep,philippe.bouillon@codeboxx.biz,261-811-7248,123456,,,,8/2/2018,6/3/2018
+2,2,Serge,Savoie,Engineer,serge.savoie@codeboxx.biz,782-252-0031,123456,,,,6/27/2018,10/24/2018
+3,3,Felix-Antoine,Paradis,Engineer,felix-antoine.paradis@codeboxx.biz,590-425-5182,123456,,,,1/30/2019,7/14/2018
+4,4,Mathieu,Houde,Engineer,mathieu.houde@codeboxx.biz,272-643-6982,123456,,,,1/19/2019,5/20/2018
+5,5,Mathieu,Lefrancois,Engineer,mathieu.lefrancois@codeboxx.biz,273-965-9834,123456,,,,6/14/2018,12/2/2018
+6,6,Remi,Gagnon,Engineer,remi.gagnon@codeboxx.biz,977-503-9474,123456,,,,5/27/2018,3/12/2019
+7,7,Nadya,Fortier,Director,nadya.fortier@codeboxx.biz,168-641-9076,123456,,,,8/31/2018,12/20/2018
+8,8,Pablo,Dobby,Student,Dobby.truuu@gmail.com,517-902-9314,123456,,,,8/28/2018,3/28/2019

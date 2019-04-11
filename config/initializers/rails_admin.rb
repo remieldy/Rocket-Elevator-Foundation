@@ -4,9 +4,9 @@ RailsAdmin.config do |config|
 
   # == Devise ==
   config.authenticate_with do
-    warden.authenticate! scope: :user
+    warden.authenticate! scope: :employee
   end
-  config.current_user_method(&:current_user)
+  config.current_user_method(&:current_employee)
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
-    config.current_user_method(&:current_user)
+    config.current_user_method(&:current_employee)
 
     ## With an audit adapter, you can add:
     # history_index

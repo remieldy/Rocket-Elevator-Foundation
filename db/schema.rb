@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_190342) do
+ActiveRecord::Schema.define(version: 2019_04_09_140420) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address_type"
@@ -98,26 +98,46 @@ ActiveRecord::Schema.define(version: 2019_04_10_190342) do
     t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "title", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "encrypted_password", default: ""
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_employees_on_email", unique: true
+    t.index ["first_name"], name: "index_employees_on_first_name"
+    t.index ["last_name"], name: "index_employees_on_last_name"
+    t.index ["phone"], name: "index_employees_on_phone", unique: true
+    t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+    t.index ["title"], name: "index_employees_on_title"
+    t.index ["user_id"], name: "index_employees_on_user_id"
+  end
+
   create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "author_id"
+    t.integer "author_id", null: false
     t.bigint "customer_id"
     t.bigint "building_id"
     t.bigint "battery_id"
     t.bigint "column_id"
     t.bigint "elevator_id"
-    t.bigint "user_id"
-    t.date "interventionStart"
+    t.integer "employee_id"
+    t.date "intervention_start"
     t.date "intervention_finish"
     t.string "results"
     t.text "report"
-    t.text "statut"
-    t.index ["author_id"], name: "index_interventions_on_author_id"
+    t.string "status"
     t.index ["battery_id"], name: "index_interventions_on_battery_id"
     t.index ["building_id"], name: "index_interventions_on_building_id"
     t.index ["column_id"], name: "index_interventions_on_column_id"
     t.index ["customer_id"], name: "index_interventions_on_customer_id"
     t.index ["elevator_id"], name: "index_interventions_on_elevator_id"
-    t.index ["user_id"], name: "index_interventions_on_user_id"
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -163,17 +183,17 @@ ActiveRecord::Schema.define(version: 2019_04_10_190342) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "title"
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "title", default: "", null: false
     t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "encrypted_password", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "batteries", "buildings", on_update: :cascade, on_delete: :cascade
@@ -185,11 +205,11 @@ ActiveRecord::Schema.define(version: 2019_04_10_190342) do
   add_foreign_key "customers", "addresses", on_update: :cascade, on_delete: :cascade
   add_foreign_key "customers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "elevators", "columns", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "employees", "users"
   add_foreign_key "interventions", "batteries", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interventions", "buildings", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interventions", "columns", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interventions", "customers", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interventions", "elevators", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "interventions", "users", column: "author_id"
   add_foreign_key "leads", "customers", on_update: :cascade, on_delete: :cascade
 end

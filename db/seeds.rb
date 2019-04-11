@@ -27,7 +27,7 @@ csv.each do |row|
 
 end
 
-csv_text = File.read(Rails.root.join('good_data', 'User.csv'))
+csv_text = File.read(Rails.root.join('good_data', 'users.csv'))
 csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
 csv.each do |row|
     
@@ -38,10 +38,40 @@ csv.each do |row|
     t.last_name = row['last_name']
     t.title = row['title']
     t.email = row['email']
+    t.phone = row['phone']
     t.encrypted_password = row['encrypted_password']
+    t.reset_password_token = row['reset_password_token']
+    t.reset_password_sent_at = row['reset_password_sent_at']
+    t.remember_created_at = row['remember_created_at']
+    t.created_at = row['created_at']
+    t.updated_at = row['updated_at']
     t.save!
 
 end
+
+csv_text = File.read(Rails.root.join('good_data', 'employees.csv'))
+csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
+csv.each do |row|
+    
+    row = row.to_hash
+    p row
+    t = User.new
+    t.first_name = row['first_name']
+    t.last_name = row['last_name']
+    t.title = row['title']
+    t.email = row['email']
+    t.phone = row['phone']
+    t.encrypted_password = row['encrypted_password']
+    t.reset_password_token = row['reset_password_token']
+    t.reset_password_sent_at = row['reset_password_sent_at']
+    t.remember_created_at = row['remember_created_at']
+    t.created_at = row['created_at']
+    t.updated_at = row['updated_at']
+    t.save!
+
+end
+
+
 
 csv_text = File.read(Rails.root.join('good_data', 'customer.csv'))
 csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
@@ -205,26 +235,32 @@ end
     t.save!
 
 end
-
-csv_text = File.read(Rails.root.join('good_data', 'intervention.csv'))
-csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
-csv.each do |row|
-   
-   row = row.to_hash
-   p row
-   t = Intervention.new
-   t.user_id = row['user_id']
-   t.building_id = row['building_id']
-   t.battery_id = row['battery_id']
-   t.column_id = row['column_id']
-   t.elevator_id = row['elevator_id']
-   t.intervention_start = row['intervention_start']
-   t.intervention_finish = row['intervention_finish']
-   t.intervention_result = row['intervention_result']
-   t.report = row['report']
-   t.status = row['status']
-   t.save!
-
+csv_text = Rails.root.join('good_data', 'intervention.csv')
+CSV.foreach(csv_text, :headers => true) do |row|
+    p row
+    Intervention.create!(row.to_hash)
 end
+# csv_text = File.read(Rails.root.join('good_data', 'intervention.csv'))
+# csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
+# csv.each do |row|
+   
+#    row = row.to_hash
+#    p row
+#    t = Intervention.new
+#    t.author_id = row['author_id']
+#    t.customer_id = row['customer_id']
+#    t.building_id = row['building_id']
+#    t.battery_id = row['battery_id']
+#    t.column_id = row['column_id']
+#    t.elevator_id = row['elevator_id']
+#    t.employee_id = row['employee_id']
+#    t.intervention_start = row['intervention_start']
+#    t.intervention_finish = row['intervention_finish']
+#    t.results = row['results']
+#    t.report = row['report']
+#    t.status = row['status']
+#    t.save!
+
+# end
 
 

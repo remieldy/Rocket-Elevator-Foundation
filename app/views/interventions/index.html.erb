@@ -188,13 +188,13 @@
 							5- second  p.id show the value to get in building class  == p.id 
 							   
 					<%# <%= form_with :intervention, url: {},html: {method: "post"} do |f| %>
-					<%= form_with model: @intervention  do |f| %>
-					<%= f.select(:customer, Customer.all.collect {|p| [p.company_name, p.id]},  {prompt: "Select a Client"}, {class: 'form-control'}) %>
-					<%= f.select(:building, Building.all.collect {|p| [p.id]},  {prompt: "Select a Building Number"}, {class: 'form-control'}) %>
-					<%= f.select(:battery, Battery.all.collect {|p| [p.id]},  {prompt: "Select a Battery Number"}, {class: 'form-control'}) %>
-					<%= f.select(:column, Column.all.collect {|p| [p.id]},  {prompt: "Select a Column Number"}, {class: 'form-control'}) %>
-					<%= f.select(:elevator, Elevator.all.collect {|p| [p.id]},  {prompt: "Select a Elevator Number"}, {class: 'form-control'}) %>
-					<%= f.select(:user, User.all.collect {|p| [p.first_name, p.id]},  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
+					<%= form_with model: @intervention, local: true  do |f| %>
+					<%= f.select(:customer_id, Customer.all.collect {|p| [p.company_name, p.id]},  {prompt: "Select a Client"}, {class: 'form-control'}) %>
+					<%= f.select(:building_id, Building.all.collect {|p| [p.id]},  {prompt: "Select a Building Number"}, {class: 'form-control'}) %>
+					<%= f.select(:battery_id, Battery.all.collect {|p| [p.id]},  {prompt: "Select a Battery Number"}, {class: 'form-control'}) %>
+					<%= f.select(:column_id, Column.all.collect {|p| [p.id]},  {prompt: "Select a Column Number"}, {class: 'form-control'}) %>
+					<%= f.select(:elevator_id, Elevator.all.collect {|p| [p.id]},  {prompt: "Select a Elevator Number"}, {class: 'form-control'}) %>
+					<%= f.select(:user_id, User.all.collect {|p| [p.first_name, p.id]},  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
           
 						<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
 

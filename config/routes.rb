@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :stats
-  devise_for :users
+  devise_for :employees
   mount RailsAdmin::Engine => '/emp-dashboard', as: 'rails_admin'
   resources :elevators
   resources :columns

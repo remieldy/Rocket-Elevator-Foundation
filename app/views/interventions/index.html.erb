@@ -179,11 +179,11 @@
 					&nbsp;
 					&nbsp;
 							<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
-							<%# 1- faire un form_for
-							2- <%= f.select(:customer_id, == customer_id pour les customers,
-							3- Customer.all.collect == il collect tout les customer, 
-							4- ensuite dans la classe dans mysql company_name pour avoir le nom des compagny == p.company_name,
-							5-  le second  p.id indique sa valeur pour aller le chercher avec buildings == p.id 
+							<%# 1- do a  form_for or form_with
+							2- <%= f.select(:customer_id, == customer_id for the  customers,
+							3- Customer.all.collect == they collect all customer class, 
+							4- afeter in the class in mysql company_name for have all name of compagny == p.company_name,
+							5- second  p.id show the value to get in building class  == p.id 
 							   
 					<%# <%= form_with :intervention, url: {},html: {method: "post"} do |f| %>
 					<%= form_with model: @intervention  do |f| %>

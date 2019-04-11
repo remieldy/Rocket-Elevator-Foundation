@@ -45,6 +45,15 @@ def get_battery_from_building
   # POST /interventions.json
   def create
     @intervention = Intervention.new(intervention_params)
+    @intervention.author_id = current_user.id
+    logger.info(intervention_params)
+
+    # @intervention.customer_id = params [:customer_id]
+    # @intervention.building_id = params [:building_id]
+    # @intervention.battery_id = params [:battery_id]
+    # @intervention.column_id = params [:column_id]
+    # @intervention.elevator_id = params [:elevator_id]
+
 
     respond_to do |format|
       if @intervention.save
@@ -90,7 +99,8 @@ def get_battery_from_building
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def intervention_params
-      params.fetch(:intervention, {})
+      #params.fetch(:intervention, {})
+      params.permit(:customer_id, :building_id, :column_id, :elevator_id, :battery_id, :author_id, :user_id)
     end
 end
   

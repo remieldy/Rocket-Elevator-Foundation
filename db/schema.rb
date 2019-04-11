@@ -98,44 +98,24 @@ ActiveRecord::Schema.define(version: 2019_04_10_190342) do
     t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
-  create_table "intervention", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "author_id"
-    t.bigint "customer_id", null: false
-    t.bigint "building_id", null: false
+    t.bigint "customer_id"
+    t.bigint "building_id"
     t.bigint "battery_id"
     t.bigint "column_id"
     t.bigint "elevator_id"
     t.bigint "user_id"
     t.date "interventionStart"
     t.date "intervention_finish"
-    t.string "results", null: false
+    t.string "results"
     t.text "report"
-    t.text "statut", null: false
-    t.index ["author_id"], name: "index_intervention_on_author_id"
-    t.index ["battery_id"], name: "index_intervention_on_battery_id"
-    t.index ["building_id"], name: "index_intervention_on_building_id"
-    t.index ["column_id"], name: "index_intervention_on_column_id"
-    t.index ["customer_id"], name: "index_intervention_on_customer_id"
-    t.index ["elevator_id"], name: "index_intervention_on_elevator_id"
-    t.index ["user_id"], name: "index_intervention_on_user_id"
-  end
-
-  create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "building_id", null: false
-    t.bigint "battery_id"
-    t.bigint "column_id"
-    t.bigint "elevator_id"
-    t.datetime "intervention_start"
-    t.datetime "intervention_finish"
-    t.integer "intervention_result"
-    t.text "report"
-    t.integer "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "statut"
+    t.index ["author_id"], name: "index_interventions_on_author_id"
     t.index ["battery_id"], name: "index_interventions_on_battery_id"
     t.index ["building_id"], name: "index_interventions_on_building_id"
     t.index ["column_id"], name: "index_interventions_on_column_id"
+    t.index ["customer_id"], name: "index_interventions_on_customer_id"
     t.index ["elevator_id"], name: "index_interventions_on_elevator_id"
     t.index ["user_id"], name: "index_interventions_on_user_id"
   end
@@ -205,13 +185,11 @@ ActiveRecord::Schema.define(version: 2019_04_10_190342) do
   add_foreign_key "customers", "addresses", on_update: :cascade, on_delete: :cascade
   add_foreign_key "customers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "elevators", "columns", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "intervention", "batteries", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "intervention", "buildings", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "intervention", "columns", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "intervention", "customers", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "intervention", "elevators", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "intervention", "users", column: "author_id"
+  add_foreign_key "interventions", "batteries", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interventions", "buildings", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "interventions", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interventions", "columns", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interventions", "customers", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interventions", "elevators", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interventions", "users", column: "author_id"
   add_foreign_key "leads", "customers", on_update: :cascade, on_delete: :cascade
 end

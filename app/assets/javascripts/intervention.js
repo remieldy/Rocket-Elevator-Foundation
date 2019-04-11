@@ -1,8 +1,4 @@
 
-// https://fool-dev.com/how-to-create-a-dependent-dropdown-in-ruby-on-rails/
-    // site ou comment faire le ajax
-
-
 // ==============================================================================================
 // ==============================================================================================
 // ==============================================================================================
@@ -11,75 +7,78 @@
     // the variable customerId = a tout les customer avec loption selected
     // the roots between intervation page and buildings from customer 
     // the function data after ca vide le building avec le .empty
-    // ensuite ca remplis avec le .append avec loption select Building dans l'input
-    // do a  for loop for appen all building class
+    // after it fill with .append avec loption select Building inside input
+    // do a  for loop for fill all building class
     
     
 $(document).ready(function(){
-  $("#building").hide();
-  $("#battery").hide();
-  $("#column").hide();
-  $("#elevator").hide();
-  $("#customer").on('change', function(){
-      var customerId = $("#customer option:selected").val();
+  $("#building_id").hide();
+  $("#battery_id").hide();
+  $("#column_id").hide();
+  $("#elevator_id").hide();
+
+  $("#customer_id").on('change', function(){
+      var customerId = $("#customer_id option:selected").val();
       
 $.get( "interventions/get_buildings_from_customer", {customer_id: customerId}, function( data ) {
-  $("#building").show();  
-  $("#building").empty();
-  	$("#building").append('<option>Select Building</option>');
+  $("#building_id").show();  
+  $("#building_id").empty();
+  	$("#building_id").append('<option>Select Building</option>');
   	for(var i = 0; i < data.length; i++){
-  		$("#building").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
+  		$("#building_id").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
 	      	}
 	    }
       );
 })
 
 
-$("#building").on('change', function(){
-  var buildingId = $("#building option:selected").val()
+$("#building_id").on('change', function(){
+  var buildingId = $("#building_id option:selected").val()
   
   $.get( "interventions/get_battery_from_building", {building_id: buildingId}, function( data ) {
-    $("#battery").show();
-    $("#battery").empty();
-    $("#battery").append('<option>Select battery</option>');
+    $("#battery_id").show();
+    $("#battery_id").empty();
+    $("#battery_id").append('<option>Select battery</option>');
     for(var i = 0; i < data.length; i++){
-      $("#battery").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
+      $("#battery_id").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
     }
   }
   );
 });
 
 
-$("#battery").on('change', function(){
-  var batteryId = $("#battery option:selected").val();
+$("#battery_id").on('change', function(){
+  var batteryId = $("#battery_id option:selected").val();
   
   $.get( "interventions/get_column_from_battery", {battery_id: batteryId}, function( data ) {
-    $("#column").show();
-    $("#column").empty();
-    $("#column").append('<option>Select Column</option>');
+    $("#column_id").show();
+    $("#column_id").empty();
+    $("#column_id").append('<option>Select Column</option>');
     for(var i = 0; i < data.length; i++){
-      $("#column").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
+      $("#column_id").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
     }
   }
   );
 });
 
 
-$("#column").on('change', function(){
-  var columnId = $("#column option:selected").val();
+$("#column_id").on('change', function(){
+  var columnId = $("#column_id option:selected").val();
   
   $.get( "interventions/get_elevator_from_column", {column_id: columnId}, function( data ) {
-    $("#elevator").show();
-    $("#elevator").empty();
-    $("#elevator").append('<option>Select elevator</option>');
+    $("#elevator_id").show();
+    $("#elevator_id").empty();
+    $("#elevator_id").append('<option>Select elevator</option>');
     for(var i = 0; i < data.length; i++){
-      $("#elevator").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
+      $("#elevator_id").append('<option value="' + data[i]["id"] + '">' +data[i]["id"] + '</option>');
     }
   }
   );
 });
 });
 
+
+   
 // ==============================================================================================
 // ==============================================================================================
 // ==============================================================================================

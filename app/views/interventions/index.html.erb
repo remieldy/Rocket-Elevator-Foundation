@@ -178,7 +178,9 @@
 					&nbsp;
 					&nbsp;
 					&nbsp;
-							<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
+
+
+					<%# ---------------------- dropdown qui est lien avec la database mysql -------------------- %>
 							<%# 1- do a  form_for or form_with
 							2- <%= f.select(:customer_id, == customer_id for the  customers,
 							3- Customer.all.collect == they collect all customer class, 
@@ -194,26 +196,23 @@
 					<%= f.select(:elevator, Elevator.all.collect {|p| [p.id]},  {prompt: "Select a Elevator Number"}, {class: 'form-control'}) %>
 					<%= f.select(:user, User.all.collect {|p| [p.first_name, p.id]},  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
           
-							<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
+						<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
 
-						
 
-					<%# ---------- submit button ----------- %>
-					<%= f.submit "Send" %>				
-					<%# ---------- submit button ----------- %>
+						<%# ---------------------------	Description box ------------------------------- %>
+											<form id="frm1" action="/action_page.php">
+ 					<strong> <em>Describe the nature of the Intervention :</em></strong> <input type="text" name="fname"><br>
+					 <%# ---------------------------	Description box ------------------------------- %>
+					  
 
+				    <%# ---------------  bouttun Send  ------------- %>
+					<%= f.submit "Send" %>
+					<%# ---------------  bouttun Send  ------------- %>
 
 
 					<% end %>
-						<%# comment eleargir ma case input %>
-					<form id="frm1" action="/action_page.php">
- 					<strong> <em>Describe the nature of the Intervention :</em></strong> <input type="text" name="fname"><br>
-					  <%# comment leargir ma case input %>
 
 
-					<%# ------- bouton input ------- %>
- 					<input type="button" onclick="myFunction()" value="Submit">
-					 <%# ------- bouton input ------- %>
 					</form>
 			</div>
 		</div>

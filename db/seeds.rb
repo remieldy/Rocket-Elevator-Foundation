@@ -55,29 +55,6 @@ CSV.foreach(csv_employees, :headers => true) do |row|
     Employee.create!(row.to_hash)
 end
 
-# csv_text = File.read(Rails.root.join('good_data', 'employees.csv'))
-# csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
-# csv.each do |row|
-    
-#     row = row.to_hash
-#     p row
-#     t = User.new
-#     t.first_name = row['first_name']
-#     t.last_name = row['last_name']
-#     t.title = row['title']
-#     t.email = row['email']
-#     t.phone = row['phone']
-#     t.encrypted_password = row['encrypted_password']
-#     t.reset_password_token = row['reset_password_token']
-#     t.reset_password_sent_at = row['reset_password_sent_at']
-#     t.remember_created_at = row['remember_created_at']
-#     t.created_at = row['created_at']
-#     t.updated_at = row['updated_at']
-#     t.save!
-
-# end
-
-
 
 csv_text = File.read(Rails.root.join('good_data', 'customer.csv'))
 csv = CSV.parse(csv_text, col_sep: ",", :headers => true)

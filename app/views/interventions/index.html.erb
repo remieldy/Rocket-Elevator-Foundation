@@ -194,15 +194,16 @@
 					<%= f.select(:battery_id, Battery.all.collect {|p| [p.id]},  {prompt: "Select a Battery Number"}, {class: 'form-control'}) %>
 					<%= f.select(:column_id, Column.all.collect {|p| [p.id]},  {prompt: "Select a Column Number"}, {class: 'form-control'}) %>
 					<%= f.select(:elevator_id, Elevator.all.collect {|p| [p.id]},  {prompt: "Select a Elevator Number"}, {class: 'form-control'}) %>
-					<%= f.select(:user_id, User.all.collect {|p| [p.first_name, p.id]},  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
+					<%= f.select(:employee_id, options_from_collection_for_select(User.all, 'id', 'first_name'),  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
+
           
 					
 
 
 					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
 					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
-					
-					<%= f.text_field :report %>
+					<%= f.text_field(:report, {class: 'form-control', :required => "true", :autocomplete => "off"}) %>
+					<%# <%= f.text_field :report %> 
 					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
 					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
  				

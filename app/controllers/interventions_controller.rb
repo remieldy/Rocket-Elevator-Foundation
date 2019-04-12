@@ -19,7 +19,6 @@ class InterventionsController < ApplicationController
     render json: Elevator.where("column_id = ?", params[:column_id])
     end
 
-
   
   # GET /interventions
   # GET /interventions.json
@@ -46,10 +45,14 @@ class InterventionsController < ApplicationController
   # POST /interventions
   # POST /interventions.json
   def create
+    p intervention_params
     @intervention = Intervention.new(intervention_params)
+
+    @intervention.status = "Pending"
+
     @intervention.author_id = session[:author_id]
-    @the_author = User.find(session[:author_id])
-    @the_employee = User.find(params[:user_id])
+    @the_author = Employee.find(session[:author_id])
+    @the_employee = User.find(params[:employee_id])
 
     
     # @intervention. = params[:current_employee]
@@ -57,7 +60,7 @@ class InterventionsController < ApplicationController
 
 # ---------------------------------  ZENDESK  ----------------------------------
 # ---------------------------------  ZENDESK  ----------------------------------
-puts "this is the employee id #{params[:user_id]}"
+puts "this is the employee id #{params[:employee_id]}"
 
 
 ZendeskAPI::Ticket.create!($client,
@@ -76,6 +79,7 @@ Employee (if specified) is : #{@the_employee.first_name}
 Description of report : #{@intervention.report}"}
 
 )
+
 # ---------------------------------  ZENDESK  ----------------------------------
 # ---------------------------------  ZENDESK  ----------------------------------
 

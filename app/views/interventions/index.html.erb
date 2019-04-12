@@ -196,18 +196,23 @@
 					<%= f.select(:elevator_id, Elevator.all.collect {|p| [p.id]},  {prompt: "Select a Elevator Number"}, {class: 'form-control'}) %>
 					<%= f.select(:user_id, User.all.collect {|p| [p.first_name, p.id]},  {prompt: "Select a Employee"}, {class: 'form-control'}) %>
           
-						<%# --------------- dropdown qui est lien avec la database mysql -------------------- %>
+					
 
 
-						<%# ---------------------------	Description box ------------------------------- %>
-											<form id="frm1" action="/action_page.php">
- 					<strong> <em>Describe the nature of the Intervention :</em></strong> <input type="text" name="fname"><br>
-					 <%# ---------------------------	Description box ------------------------------- %>
+					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
+					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
+					
+					<%= f.text_field :report %>
+					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
+					<%# ---------------------  this is a link for send message  for ZENDESK  ----------------------------------- %>
+ 				
+					 
 					  
 
-				    <%# ---------------  bouttun Send  ------------- %>
+				  <%# --------------------------------------  SEND BUTTON  -------------------------------------- %>
+
 					<%= f.submit "Send" %>
-					<%# ---------------  bouttun Send  ------------- %>
+					<%# --------------------------------------  SEND BUTTON  -------------------------------------- %>
 
 
 					<% end %>

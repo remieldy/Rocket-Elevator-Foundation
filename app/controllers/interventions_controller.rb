@@ -2,22 +2,21 @@ class InterventionsController < ApplicationController
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
 
 
-      #  -------  me sort tout les buildings  --------
-def get_buildings_from_customer
-  render json: Building.where("customer_id = ?", params[:customer_id])
-  end
+  def get_buildings_from_customer
+    render json: Building.where("customer_id = ?", params[:customer_id])
+    end
 
-def get_battery_from_building
+  def get_battery_from_building
     render json: Battery.where("building_id = ?", params[:building_id])
     end
 
   def get_column_from_battery
-      render json: Column.where("battery_id = ?", params[:battery_id])
-      end
+    render json: Column.where("battery_id = ?", params[:battery_id])
+    end
 
- def get_elevator_from_column
-        render json: Elevator.where("column_id = ?", params[:column_id])
-        end
+  def get_elevator_from_column
+    render json: Elevator.where("column_id = ?", params[:column_id])
+    end
 
 
   
@@ -25,6 +24,7 @@ def get_battery_from_building
   # GET /interventions.json
   def index
     @interventions = Intervention.all
+    # session[:current_employee] = (current_employee['id'])
   end
 
   # GET /interventions/1
@@ -45,14 +45,23 @@ def get_battery_from_building
   # POST /interventions.json
   def create
     @intervention = Intervention.new(intervention_params)
-    @intervention.author_id = current_user.id
+    @intervention.author_id = current_employee
     logger.info(intervention_params)
 
-    # @intervention.customer_id = params [:customer_id]
-    # @intervention.building_id = params [:building_id]
-    # @intervention.battery_id = params [:battery_id]
-    # @intervention.column_id = params [:column_id]
-    # @intervention.elevator_id = params [:elevator_id]
+# ---------------------     ZENDESK -------------------------
+
+# ZendeskAPI::Ticket.create!($client,
+#   :priority => "low",
+#   :subject => "#{@intervention.author_id} from #{@intervention.employee_id}" ,
+#   :comment => { :body => "The contact #{@intervention.author_id} from company #{@intervention.company_name} can be reached at email #{@intervention.email} and at phone number #{@intervention.phone_number}.
+#   #{@intervention.department_in_charge} has a project named #{@intervention.project_name} which would require contribution from Rocket Elevators.
+
+#   #{@intervention.project_description}
+#   Attached Message: #{@intervention.message}
+#   The contact uploaded an attachment"}
+#   )
+# ---------------------     ZENDESK -------------------------
+
 
 
     respond_to do |format|
@@ -100,7 +109,7 @@ def get_battery_from_building
     # Never trust parameters from the scary internet, only allow the white list through.
     def intervention_params
       #params.fetch(:intervention, {})
-      params.permit(:customer_id, :building_id, :column_id, :elevator_id, :battery_id, :author_id, :user_id)
+      params.permit(:author_id, :customer_id, :building_id, :battery_id, :column_id, :elevator_id, :employee_id, :intervention_start, :intervention_finish, :results, :report, :status )
     end
 end
   

@@ -45,7 +45,8 @@ class InterventionsController < ApplicationController
   # POST /interventions.json
   def create
     @intervention = Intervention.new(intervention_params)
-    @intervention.author_id = current_employee
+    @intervention.author_id = params[:user_id]
+
     logger.info(intervention_params)
 
 # ---------------------     ZENDESK -------------------------

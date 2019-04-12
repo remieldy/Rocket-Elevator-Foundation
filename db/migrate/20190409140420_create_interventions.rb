@@ -7,7 +7,7 @@ class CreateInterventions < ActiveRecord::Migration[5.2]
       t.references :battery, foreign_key: {on_delete: :cascade, on_update: :cascade}, null: true
       t.references :column, foreign_key: {on_delete: :cascade, on_update: :cascade}, null: true
       t.references :elevator, foreign_key: {on_delete: :cascade, on_update: :cascade}, null: true
-      t.integer :employee_id, null: true
+      t.integer :employee_id, null: false
       t.date :intervention_start, null: true
       t.date :intervention_finish, null: true
       t.string :results, null: default:, "Incompleted", null: false

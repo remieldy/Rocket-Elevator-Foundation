@@ -30,19 +30,25 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
     @lead.dropboxcreated
  
-    # @customer = Customer.find_by company_name: params[:lead][:company_name]
 
-    # if @customer != nil
-    #     @lead.customer_id = @customer.id
-    # else @lead.customer_id = nil
+      ZendeskAPI::Ticket.create!($client,
+        :priority => "low",
+        :subject => "#{@intervention.author_id} from #{@the_employee.first_name}",
+      
+      
+        :comment => { :body => "The Author is : #{@the_author.first_name}  
+      client is : #{@intervention.customer.company_name}
+      customer ID is : #{@intervention.customer_id}
+      building ID is : #{@intervention.building_id} 
+      Battery ID is : #{@intervention.battery_id} 
+      Column ID is : #{@intervention.column_id} 
+      Elevator ID (if specified) is : #{@intervention.elevator_id} 
+      Employee (if specified) is : #{@the_employee.first_name}
+      Description of report : #{@intervention.report}"}
+      
+      )
 
-      ZendeskAPI::Ticket.create!($client, :subject => "#{@lead.full_name} from #{@lead.company_name}", :type=> "task", :comment => { :value => "The contact #{@lead.full_name} from company #{@lead.company_name} can be reached at email  #{@lead.email} and at phone number #{@lead.phone_number}. #{@lead.department_in_charge} has a project named #{@lead.project_name} which would require contribution from Rocket Elevators.
-      #{@lead.project_description}
-      Attached Message: #{@lead.message}"})
 
-      # ZendeskAPI::Ticket.create!($client, :subject => "#{@lead.full_name} from #{@lead.company_name}", :type=> "task", :comment => { :value => "The contact #{@lead.full_name} from company #{@lead.company_name} with the number of building  #{@lead.building} and number of battery #{@lead.battery}. with number of column #{@lead.column} has a elevator name #{@lead.elevator} which would require contribution from Rocket Elevators. #{@lead.users} who makes a job. #{@lead.description} your description about intervention.
-      #   #{@lead.project_description}
-      #   Attached Message: #{@lead.message}"})
 
       sendgrid(@lead)
 

@@ -1,5 +1,6 @@
 class InterventionsController < ApplicationController
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_employee!
 
 
   def get_buildings_from_customer
@@ -24,7 +25,8 @@ class InterventionsController < ApplicationController
   # GET /interventions.json
   def index
     @interventions = Intervention.all
-    # session[:current_employee] = (current_employee['id'])
+    @the_author_id = current_employee['id']
+    session[:author_id] = @the_author_id
   end
 
   # GET /interventions/1
@@ -45,24 +47,37 @@ class InterventionsController < ApplicationController
   # POST /interventions.json
   def create
     @intervention = Intervention.new(intervention_params)
-    @intervention.author_id = params[:user_id]
+    @intervention.author_id = session[:author_id]
+    @the_author = User.find(session[:author_id])
+    @the_employee = User.find(params[:user_id])
 
+    
+    # @intervention. = params[:current_employee]
     logger.info(intervention_params)
 
-# ---------------------     ZENDESK -------------------------
+# ---------------------------------  ZENDESK  ----------------------------------
+# ---------------------------------  ZENDESK  ----------------------------------
+puts "this is the employee id #{params[:user_id]}"
 
-# ZendeskAPI::Ticket.create!($client,
-#   :priority => "low",
-#   :subject => "#{@intervention.author_id} from #{@intervention.employee_id}" ,
-#   :comment => { :body => "The contact #{@intervention.author_id} from company #{@intervention.company_name} can be reached at email #{@intervention.email} and at phone number #{@intervention.phone_number}.
-#   #{@intervention.department_in_charge} has a project named #{@intervention.project_name} which would require contribution from Rocket Elevators.
 
-#   #{@intervention.project_description}
-#   Attached Message: #{@intervention.message}
-#   The contact uploaded an attachment"}
-#   )
-# ---------------------     ZENDESK -------------------------
+ZendeskAPI::Ticket.create!($client,
+  :priority => "low",
+  :subject => "#{@intervention.author_id} from #{@the_employee.first_name}",
 
+
+  :comment => { :body => "The Author is : #{@the_author.first_name}  
+client is : #{@intervention.customer.company_name}
+customer ID is : #{@intervention.customer_id}
+building ID is : #{@intervention.building_id} 
+Battery ID is : #{@intervention.battery_id} 
+Column ID is : #{@intervention.column_id} 
+Elevator ID (if specified) is : #{@intervention.elevator_id} 
+Employee (if specified) is : #{@the_employee.first_name}
+Description of report : #{@intervention.report}"}
+
+)
+# ---------------------------------  ZENDESK  ----------------------------------
+# ---------------------------------  ZENDESK  ----------------------------------
 
 
     respond_to do |format|

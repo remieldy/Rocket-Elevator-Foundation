@@ -10,9 +10,9 @@ class CreateInterventions < ActiveRecord::Migration[5.2]
       t.integer :employee_id, null: false
       t.date :intervention_start, null: true
       t.date :intervention_finish, null: true
-      t.string :results, null: default:, "Incompleted", null: false
+      t.string :results, default: "Incompleted", null: false
       t.text :report, optional: true
-      t.string :status, null: default: "Pending", null: false
+      t.string :status, default: "Pending", null: false
 
       
 

@@ -127,12 +127,12 @@ ActiveRecord::Schema.define(version: 2019_04_09_140420) do
     t.bigint "battery_id"
     t.bigint "column_id"
     t.bigint "elevator_id"
-    t.integer "employee_id"
+    t.integer "employee_id", null: false
     t.date "intervention_start"
     t.date "intervention_finish"
-    t.string "results"
+    t.string "results", default: "Incompleted", null: false
     t.text "report"
-    t.string "status"
+    t.string "status", default: "Pending", null: false
     t.index ["battery_id"], name: "index_interventions_on_battery_id"
     t.index ["building_id"], name: "index_interventions_on_building_id"
     t.index ["column_id"], name: "index_interventions_on_column_id"

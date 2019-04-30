@@ -1,7 +1,7 @@
 
 video: https://www.youtube.com/watch?v=g4yALa73NHU
 
-| user  | emails                    |
+| Users  | Emails                    |
 | ------------- | ------------------------------ |
 | Philippe Bouillon     | philippe.bouillon@codeboxx.biz     |
 | Mathieu LeFrançois  | mathieu.lefrançois@codeboxx.biz   |
@@ -10,17 +10,6 @@ video: https://www.youtube.com/watch?v=g4yALa73NHU
 | Serge Savoie | serge.savoie@codeboxx.biz  |
 | Felix-Antoine | felix-antoine.paradis@codeboxx.biz|
 | Nadya Fortier  | nadya.fortier@codeboxx.biz   |
-
-
-
-## USERS
-- philippe.bouillon@codeboxx.biz
-- mathieu.lefrançois@codeboxx.biz
-- mathieu.houde@codeboxx.biz
-- remi.gagnon@codeboxx.biz
-- serge.savoie@codeboxx.biz
-- felix-antoine.paradis@codeboxx.biz
-- nadya.fortier@codeboxx.biz
 
 PASSWORD FOR EVERYONE: 123456
 

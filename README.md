@@ -12,7 +12,7 @@
 
 PASSWORD FOR EVERYONE: 123456
 
-### API https://github.com/remieldy/Rocket-Elevator-Foundation_API
+- API https://github.com/remieldy/Rocket-Elevator-Foundation_API
 
 - [ ] Twilio:
     - [ ] communication tools unifies
@@ -24,21 +24,16 @@ PASSWORD FOR EVERYONE: 123456
 - [ ] Zendesk:
     - [ ] platform for handling "customer contact" intervention ticket
 
-
 - [ ] Slack:
     - [ ] the information system can communicate with humans through Slack
-
 
 - [ ] IBM Watson:
     - [ ] service provider (public cloud)
 
-
 - service provider (public cloud)
-
 
 - [ ] Google Maps:
     - [ ] geolocation the most elaborate that can be found
-
 
 - [ ] SendGrid:
     - [ ] send transactional email

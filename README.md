@@ -21,7 +21,7 @@ PASSWORD FOR EVERYONE: 123456
 	- [ ] connect computer has a phone
     - [ ] a company comes in contact with an individual
 
--  Zendesk:
+- Zendesk:
     - [ ] platform for handling "customer contact" intervention ticket
 
 - Slack:

@@ -15,49 +15,33 @@ PASSWORD FOR EVERYONE: 123456
 
 # API https://github.com/remieldy/Rocket-Elevator-Foundation_API
 
-- [ ] Twilio:
+- [ ] **Twilio:
     - [ ] communication tools unifies
     - [ ] allows sending sms
     - [ ] video conference
 	- [ ] connect computer has a phone
     - [ ] a company comes in contact with an individual
-    
-### Zendesk:
 
-- [ ] Zendesk:
+- [ ] **Zendesk:
     - [ ] platform for handling "customer contact" intervention ticket
 
 
-
-### Slack:
-
-- [ ] Slack:
+- [ ] **Slack:
     - [ ] the information system can communicate with humans through Slack
 
 
-
-### IBM Watson:
-
-- [ ] IBM Watson:
+- [ ] **IBM Watson:
     - [ ] service provider (public cloud)
 
 
-
-### Dropbox:
 - service provider (public cloud)
 
 
-### Google Maps:
-
-
-- [ ] Google Maps:
+- [ ] **Google Maps:
     - [ ] geolocation the most elaborate that can be found
 
 
-
-### SendGrid:
-
-- [ ] SendGrid:
+- [ ] **SendGrid:
     - [ ] send transactional email
     - [ ] acknowledge receipt
     - [ ] order confirmation

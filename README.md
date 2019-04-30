@@ -30,8 +30,6 @@ PASSWORD FOR EVERYONE: 123456
 - [ ] IBM Watson:
     - [ ] service provider (public cloud)
 
-- service provider (public cloud)
-
 - [ ] Google Maps:
     - [ ] geolocation the most elaborate that can be found
 

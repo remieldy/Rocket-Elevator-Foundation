@@ -12,7 +12,6 @@
 | Nadya Fortier | nadya.fortier@codeboxx.biz | 123456 |
 
 
-PASSWORD FOR EVERYONE: 123456
 
 - API https://github.com/remieldy/Rocket-Elevator-Foundation_API
 

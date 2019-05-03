@@ -4,23 +4,13 @@
 | Users  | Emails  | Passwords |
 | :------------ |:---------------:| -----:|
 | Philippe Bouillon | philippe.bouillon@codeboxx.biz | 123456 |
-| Mathieu LeFrançois      | mathieu.lefrançois@codeboxx.biz        |   123456 |
-| Mathieu Houde 	|mathieu.houde@codeboxx.biz        |    123456 |
-| Philippe Bouillon      | philippe.bouillon@codeboxx.biz | 123456 |
-| Philippe Bouillon      | philippe.bouillon@codeboxx.biz | 123456 |
-| Philippe Bouillon      | philippe.bouillon@codeboxx.biz | 123456 |
-| Philippe Bouillon      | philippe.bouillon@codeboxx.biz | 123456 |
+| Mathieu LeFrançois | mathieu.lefrançois@codeboxx.biz | 123456 |
+| Mathieu Houd  |  mathieu.houde@codeboxx.biz | 123456 |
+| Remi Gagnon  | remi.gagnon@codeboxx.biz | 123456 |
+| Serge Savoie  | serge.savoie@codeboxx.biz | 123456 |
+| Felix-Antoine  | felix-antoine.paradis@codeboxx.biz | 123456 |
+| Nadya Fortier  | nadya.fortier@codeboxx.biz | 123456 |
 
-
-| Users  | Emails   | Passwords                  |
-| ------------- | ------------------------------ |
-| Philippe Bouillon     | philippe.bouillon@codeboxx.biz     || 123456     |
-| Mathieu LeFrançois  | mathieu.lefrançois@codeboxx.biz   |
-| Mathieu Houde | mathieu.houde@codeboxx.biz |
-| Remi Gagnon | remi.gagnon@codeboxx.biz  |
-| Serge Savoie | serge.savoie@codeboxx.biz  |
-| Felix-Antoine | felix-antoine.paradis@codeboxx.biz|
-| Nadya Fortier  | nadya.fortier@codeboxx.biz   |
 
 PASSWORD FOR EVERYONE: 123456
 

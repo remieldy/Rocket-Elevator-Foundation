@@ -5,11 +5,11 @@
 | :------------ |:---------------:| -----:|
 | Philippe Bouillon | philippe.bouillon@codeboxx.biz | 123456 |
 | Mathieu LeFrançois | mathieu.lefrançois@codeboxx.biz | 123456 |
-| Mathieu Houd  |  mathieu.houde@codeboxx.biz | 123456 |
-| Remi Gagnon  | remi.gagnon@codeboxx.biz | 123456 |
-| Serge Savoie  | serge.savoie@codeboxx.biz | 123456 |
-| Felix-Antoine  | felix-antoine.paradis@codeboxx.biz | 123456 |
-| Nadya Fortier  | nadya.fortier@codeboxx.biz | 123456 |
+| Mathieu Houd | mathieu.houde@codeboxx.biz | 123456 |
+| Remi Gagnon | remi.gagnon@codeboxx.biz | 123456 |
+| Serge Savoie | serge.savoie@codeboxx.biz | 123456 |
+| Felix-Antoine | felix-antoine.paradis@codeboxx.biz | 123456 |
+| Nadya Fortier | nadya.fortier@codeboxx.biz | 123456 |
 
 
 PASSWORD FOR EVERYONE: 123456

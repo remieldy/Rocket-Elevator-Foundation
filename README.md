@@ -3,7 +3,7 @@
 
 | Users  | Emails  | Passwords |
 | :------------ |:---------------:| -----:|
-| Philippe Bouillon      | philippe.bouillon@codeboxx.biz | 123456 |
+| Philippe Bouillon | philippe.bouillon@codeboxx.biz | 123456 |
 | Mathieu LeFrançois      | mathieu.lefrançois@codeboxx.biz        |   123456 |
 | Mathieu Houde 	|mathieu.houde@codeboxx.biz        |    123456 |
 | Philippe Bouillon      | philippe.bouillon@codeboxx.biz | 123456 |

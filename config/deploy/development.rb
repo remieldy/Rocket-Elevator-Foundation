@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "3.81.88.26", user: "ubuntu", roles: %w{app db web}
+server "107.23.34.194", user: "ubuntu", roles: %w{app db web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
@@ -20,9 +20,9 @@ set :linked_files, %w{config/newrelic.yml config/database.yml config/application
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{ubuntu@3.81.88.26}
-role :web, %w{ubuntu@3.81.88.26}
-role :db,  %w{ubuntu@3.81.88.26}
+role :app, %w{ubuntu@107.23.34.194}
+role :web, %w{ubuntu@107.23.34.194}
+role :db,  %w{ubuntu@107.23.34.194}
 
 
 # Configuration

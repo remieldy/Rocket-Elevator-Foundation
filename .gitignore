@@ -28,7 +28,7 @@ log/development.log
 /config/master.key
 /config/database.yml
 /config/application.yml
-/config/newrelic.yml
+#/config/newrelic.yml
 
 .vscode
 development.log
